@@ -1,14 +1,12 @@
 //memanggil modil bawaan dari node.js yaitu http
 //untuk membuat server http
 const http = require('http')
+const fs = require('fs')
 
 http.createServer(function(request, response ){
-    
     response.writeHead(200, {'Content-type' : 'text/html'})
     if (request.url == '/') {
-        response.end(`<h1>Halo guys, script ini di gnerate dari backend node js</h1>`)
-    
-
+       fs.createReadStream('./view/halaman-utama.html').pipe(response)
     }
     else if (request.url == '/profil'){
         let tahun_lahir = 1980
