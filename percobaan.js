@@ -1,3 +1,5 @@
+//memanggil modil bawaan dari node.js yaitu http
+//untuk membuat server http
 const http = require('http')
 
 http.createServer(function(request, response ){
